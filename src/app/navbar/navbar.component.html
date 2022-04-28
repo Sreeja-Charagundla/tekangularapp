@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+  
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg " style="background-color: greenyellow;">
+        <div class="container-fluid">
+          <a class="navbar-brand" style = "color: black;" href="#">{{projecttitle}}</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="" aria-current="page" >Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" *ngIf="flag" routerLink="/orderdetails" >Your Orders</a>
+              </li>
+              <li class="nav-item">
+                <a *ngIf="isAdmin" class="nav-link" routerLink="/addcake">Add New Cake</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              
+              <input name="search" [(ngModel)]="searchtext" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button  class="btn btn-outline-success me-2" (click) = "search()" type="submit"><fa-icon [icon]="faSearch"></fa-icon></button>
+              <button *ngIf="!flag" routerLink="/login" class="btn btn-outline-primary ml-2" type="submit">Login</button>
+              <button *ngIf="flag" routerLink="/cart" class="btn btn-outline-warning position-relative ml-5" style="margin-right: 15px; margin-left: 5px;"><span *ngIf="!flg" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"  >{{length}}
+                </span><fa-icon [icon]="faCartShopping"></fa-icon></button>
+              <button *ngIf="flag" routerLink="/" class="btn btn-outline-danger mr-2 ml-2" (click) = "logout()"><fa-icon [icon]="falogout"></fa-icon></button>
+            </form>
+          </div>
+        </div>
+      </nav>
+</body>
+</html>
+<!-- api is /cakeorders
+post
+body{} -->

@@ -1,0 +1,36 @@
+
+<div class="ttable-responsive-sm table-responsive-md table-responsive-lg w-auto">
+<table class="table  table-hover">
+    <thead>
+        <tr >
+        <th scope="col">#</th>
+        <th scope="col" class="th-md th-sm">Name</th>
+        <th scope="col" class="th-md th-sm">Image</th>
+        <th scope="col" class="th-md th-sm">Price</th>
+        <th scope="col" class="th-md th-sm">Quantity</th>
+        <th scope="col" class="th-md th-sm">TotalPrice</th>
+        <th scope="col" class="th-md th-sm">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let items of cartitems; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td appHighlight style="font-weight: bold;">{{items.name}} </td>
+        <td ><img [src]="items.image" alt="" style="width:60px; height: 60px; border-radius: 10px;"> </td>
+        <td >{{items.price | currency:"INR" | discount}}</td>
+        <td><button class="btn btn-light" [disabled]="items.quantity==1"  (click)="remove(i)" style="margin-right: 10px;"><fa-icon [icon]="faminus"></fa-icon></button> 
+            {{items.quantity}} <button class="btn btn-light"  (click)="add(i)"><fa-icon [icon]="faplus"></fa-icon></button> </td>
+        <td>{{cartitems[i].price*cartitems[i].quantity}}</td>
+        <td><button class="btn btn-primary" routerLink="/cart" (click)="removecake(i)"><fa-icon [icon]="fatrash"></fa-icon></button> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3" class="align-right"></td>
+            <td>{{totalQuantity}}</td>
+            <td>{{totalPrice | currency:"INR"}}</td>
+            <td><button class="btn btn-primary" (click)="checkout()">Checkout</button></td>
+        </tr>
+        
+    </tbody>
+</table>
+</div>

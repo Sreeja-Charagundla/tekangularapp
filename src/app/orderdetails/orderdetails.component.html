@@ -1,0 +1,15 @@
+
+<div class="container">
+    <div *ngFor="let order of orderdata let i=index" class="mb-5">
+        <h3>Order id {{order.orderid}} </h3>
+        <div>
+            <p>Name: {{order.name}} </p>
+            <p>Oderde address: {{order.address}}, city {{order.city}}, pincode {{order.pincode}}</p>
+            <p>Ordereddate: {{order.orderdate | date}} </p>
+            <p>Total Price: {{order.price}} </p>
+            <p>Mode of Deliver: {{order.mode}}</p>
+            <p>Status: Pending</p>
+        </div>
+    </div>
+
+</div>

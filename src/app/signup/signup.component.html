@@ -1,0 +1,41 @@
+<div class="container mb-5 mt-3">
+    <div style="width: 250px; margin: auto; border: 3px solid black; padding: 10px; background-color: greenyellow;">
+        <h2>Signup here</h2>
+        <form action="" class="form-group">
+        <div *ngIf="responseError" class="alert alert-danger">
+            <label for="">{{responseError}}</label>
+        </div>
+        <div class="form-group mt-3">
+            <label for="email">Email</label>
+            <input name="display" [(ngModel)]="userdetails.email" type="email" name="name" id="">
+        </div>
+        <div class="form-group mt-3">
+            <label for="name">Name</label>
+            <input name="display" [(ngModel)]="userdetails.name"  type="text" name="name" id="">
+        </div>
+        <div class="form-group mt-3">
+            <label for="pass">Password</label>
+            <input name="display" [(ngModel)]="userdetails.password" type="password" name="pass" id="">
+        </div>
+        <div class="form-group d-flex mt-3">
+            <button class="btn btn-outline-primary mr-2" (click)="display()" style="margin-left: 20px;">Submit</button>
+        </div>
+
+    </form>
+    </div >
+      <table class="table" *ngIf="flag">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr *ngFor="let x of users">
+          <td *ngFor="let i of x">{{i}}</td>
+          <td><button class="btn btn-outline-success" (click) = "pop()">Remove</button></td>
+        </tbody>
+      </table>
+</div>

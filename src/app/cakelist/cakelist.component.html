@@ -1,0 +1,7 @@
+<button class="btn btn-light ml-2" (click)="sorta()" style="margin-left: 15px; margin-right: 10px;">Low-high</button>
+<button class="btn btn-light ml-1" (click)="sortd()">high-low</button>
+<div  class="row">
+    <app-cake *ngFor="let x of cakelist" class="col-lg-3 col-md-4 col-sm-6 col-xs-12" [cakedata]="x"></app-cake>
+</div>
+
+

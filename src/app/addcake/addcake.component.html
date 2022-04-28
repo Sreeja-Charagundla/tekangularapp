@@ -1,0 +1,76 @@
+
+<div class="container ">
+    <div class="row">
+        <div class=" row col-md-6 m-auto" style="margin-top: 30%;">
+            <input (change)="getFile($event)" type="file">
+            <br>
+            <span *ngIf="flag" style="color:black ; font-size: x-small;">{{imageUrl}} </span>
+            <br>
+            <button (click)="getimageurl()" class="btn btn-primary">Get imageUrl</button>
+        </div>
+        <div class="row col-md-6">
+            <form action="" class="form-group"> 
+                <div class="form-group mt-1">
+                    <label for="name">Cake name</label>
+                    <br>
+                    <input type="text" name="data" id="" [(ngModel)] = "data.name" > 
+                
+                </div>
+                <div class="form-group mt-1">
+                    <label for="price">Price</label>
+                    <br>
+                    <input type="number" [(ngModel)] = "data.price" name="data" >
+                    
+                </div>
+                <div class="form-group mt-1">
+                    <label for="description">Description</label>
+                    <br>
+                    <input type="text" [(ngModel)] = "data.description" name="data" > 
+                    
+                </div>
+                <div class="form-group mt-1">
+                    <label for="ingrediants">ingredients</label>
+                    <br>
+                    <input type="text" placeholder="" [(ngModel)] = "data.ingredients" name="data" > <br>
+                    
+                </div>
+                <div class="form-group mt-1">
+                    <label for="image" >Image</label>
+                    <br>
+                    <input type="text" [(ngModel)] = "data.image" name="data" placeholder="copy the url and paste it here" >
+                    
+                </div>
+                <div class="form-group mt-1">
+                    <label for="type">Type</label>
+                    <br>
+                    <input type="text" [(ngModel)] = "data.type" name="data" > <br>
+                    
+                </div>
+                <div class="form-group mt-1">
+                    <label for="wieght">Weight</label>
+                    <br>
+                    <input type="number" [(ngModel)] = "data.weight" name="data" >
+                    
+                </div>
+                <div class="form-group mt1">
+                    <label for="eggless">Eggless</label>
+                    <br>
+                    <input type="text" [(ngModel)] = "data.eggless" placeholder="type yes if eggless otherwise no" name="data" > <br>
+                    
+                </div>
+                <div class="form-group d-flex mt-3 ml-3">
+                    <br>
+                    <button type="submit" class="btn btn-outline-primary" (click)="upload()" > Upload</button>
+                </div>            
+        </form>
+        </div>
+    </div>
+</div>
+<!-- name,
+//     price,
+//     description,
+//     ingredients:[],
+//     image: url coming from server 
+//     type,
+//     weight
+//     eggless -->

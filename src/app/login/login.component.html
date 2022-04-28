@@ -1,0 +1,29 @@
+
+<div class="container mb-5 mt-3">
+    <div style="width: 250px; margin: auto; border: 3px solid black; padding: 10px;background-color: greenyellow;">
+        <h2>Login here</h2>
+        <form action="" class="form-group">
+            <div *ngIf="responseError" class="form-group mt-3 alert-danger">
+                <label for="email">{{responseError}}</label>
+            </div>
+        <div class="form-group mt-3">
+            <label for="email">Email</label>
+            <input name="display" [(ngModel)]="users.email" type="email" name="name" id="">
+        </div>
+        <div class="form-group mt-3">
+            <label for="pass">Password</label>
+            <input name="display" [(ngModel)]="users.password" type="password" name="name" id="">
+        </div>
+        <div class="form-group mt-3">
+            <a routerLink="/signup" style="color: blue;">New user Signup here</a>
+        </div>
+        <div class="form-group mt-3">
+            <a (click)="forget()" style="color:blue;" >forgot password</a>
+        </div>
+        <div class="form-group d-flex mt-3">
+            <button class="btn btn-outline-primary" (click)="login()" style="margin-left: 34%;">Login</button>
+
+        </div>
+    </form>
+    </div >
+</div>
